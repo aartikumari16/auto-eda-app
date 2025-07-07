@@ -216,8 +216,8 @@ if uploaded_file:
 
     
 
-    st.markdown("---")
-    st.subheader("📄 Download EDA Insights Report")
+    # st.markdown("---")
+    # st.subheader("📄 Download EDA Insights Report")
 
 
 
@@ -255,7 +255,7 @@ if uploaded_file:
 
     # Footer
     st.markdown(
-        '<div class="footer">Made with ❤️ using Streamlit · © 2025 Your Name</div>',
+        '<div class="footer">Made with ❤️ using Streamlit · © 2025 Aarti</div>',
         unsafe_allow_html=True
     )
 else:
