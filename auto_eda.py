@@ -222,36 +222,36 @@ if uploaded_file:
 
 
 
-if st.button("📊  Generate EDA Report"):
-    # 1️⃣  Build the report and save it to disk (HTML)
-    profile = ProfileReport(df, title="📌 Auto‑EDA Report", explorative=True)
-    profile.to_file("auto_eda_report.html")
+# if st.button("📊  Generate EDA Report"):
+#     # 1️⃣  Build the report and save it to disk (HTML)
+#     profile = ProfileReport(df, title="📌 Auto‑EDA Report", explorative=True)
+#     profile.to_file("auto_eda_report.html")
 
-    # 2️⃣  (Optional) Tiny text summary — handy for quick copy‑paste
-    summary = io.StringIO()
-    summary.write("Auto EDA Quick Stats\n")
-    summary.write(f"Rows: {len(df)}   |   Columns: {df.shape[1]}\n")
-    summary.write("\nMissing‑value overview:\n")
-    summary.write(df.isnull().sum().to_string())
-    summary.seek(0)
-    with open("eda_quick_summary.txt", "w", encoding="utf‑8") as f:
-        f.write(summary.read())
+#     # 2️⃣  (Optional) Tiny text summary — handy for quick copy‑paste
+#     summary = io.StringIO()
+#     summary.write("Auto EDA Quick Stats\n")
+#     summary.write(f"Rows: {len(df)}   |   Columns: {df.shape[1]}\n")
+#     summary.write("\nMissing‑value overview:\n")
+#     summary.write(df.isnull().sum().to_string())
+#     summary.seek(0)
+#     with open("eda_quick_summary.txt", "w", encoding="utf‑8") as f:
+#         f.write(summary.read())
 
-    # 3️⃣  Bundle both files into an in‑memory ZIP
-    zip_buffer = io.BytesIO()
-    with zipfile.ZipFile(zip_buffer, "w", zipfile.ZIP_DEFLATED) as zf:
-        zf.write("auto_eda_report.html")
-        zf.write("eda_quick_summary.txt")
-    zip_buffer.seek(0)
+#     # 3️⃣  Bundle both files into an in‑memory ZIP
+#     zip_buffer = io.BytesIO()
+#     with zipfile.ZipFile(zip_buffer, "w", zipfile.ZIP_DEFLATED) as zf:
+#         zf.write("auto_eda_report.html")
+#         zf.write("eda_quick_summary.txt")
+#     zip_buffer.seek(0)
 
-    # 4️⃣  Download button
-    st.success("✅  Report generated!  Download below:")
-    st.download_button(
-        label="⬇️  Download Auto EDA Bundle",
-        data=zip_buffer,
-        file_name="auto_eda_report.zip",
-        mime="application/zip"
-    )  
+#     # 4️⃣  Download button
+#     st.success("✅  Report generated!  Download below:")
+#     st.download_button(
+#         label="⬇️  Download Auto EDA Bundle",
+#         data=zip_buffer,
+#         file_name="auto_eda_report.zip",
+#         mime="application/zip"
+#     )  
 
     # Footer
     st.markdown(
