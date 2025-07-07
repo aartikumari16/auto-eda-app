@@ -33,5 +33,9 @@ This is a lightweight, user-friendly **Streamlit app** that performs automatic E
 - `Seaborn`, `Matplotlib`
 
 ---
+## 📄 License
 
+This app is free to use for educational and personal purposes.  
+Feel free to try it and explore your own datasets.  
+For code reuse or commercial use, please contact the author.
 
