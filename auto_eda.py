@@ -5,7 +5,7 @@ import numpy as np
 import seaborn as sns
 import matplotlib.pyplot as plt
 import io, json, zipfile
-from ydata_profiling import ProfileReport
+# from ydata_profiling import ProfileReport
 import streamlit.components.v1 as components
 
 # Page Setup
